@@ -54,7 +54,12 @@ const intents = new builder.IntentDialog({ recognizers: [recognizer] })
                 else {
                     const json = JSON.parse(response.body);
                     const expenses = json.slice(0, 10).map(exp => exp.description + " R$ " + exp.value).join('\n\r');
-                    session.send(expenses);
+                    if (expenses) {
+                        session.send(expenses);
+                    }
+                    else {
+                        session.send("Não há despesas para listar");
+                    }
                 }
 
             });

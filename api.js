@@ -18,7 +18,7 @@ const createExpense = (entities) => (callback) => {
     const content = {
         description: entities.find(e => e.type == "descricao").entity,
         due_date: '2018-02-16',
-        value: "-" + entities.find(e => e.type == "builtin.currency").entity.replace(/\D/g,''),
+        value: "-" + entities.find(e => e.type == "builtin.currency").entity.replace(',', '.').replace(/[^0-9.]/g,''),
         account: accountId,
         category: categoryId
     };
