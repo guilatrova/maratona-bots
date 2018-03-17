@@ -3,7 +3,7 @@ var restify = require('restify');
 var botbuilder_azure = require("botbuilder-azure");
 var api = require('./api');
 
-const LuisURL = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/6ffed2ae-7d25-456e-86de-68d97a6bcd1d?subscription-key=376fc739a9034815b3d30eaef6add40f&verbose=true&timezoneOffset=-180&q=";
+const LuisURL = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/6ffed2ae-7d25-456e-86de-68d97a6bcd1d?subscription-key=376fc739a9034815b3d30eaef6add40f&verbose=true&timezoneOffset=0&q="
 const isDebug = false;
 
 const server = restify.createServer();

@@ -1,9 +1,12 @@
 var request = require('request');
 
 const url = "http://maratona-bots-api.azurewebsites.net/api/";
+const headers = { 'Content-Type': "application/json" };
+const categoryId = 77;
+const accountId = 6;
 
 const retrievePendingExpenses = (callback) => {    
-    request.get(url + "expenses", callback);
+    request.get(url + "expenses", { headers: headers } , callback);
 };
 
 const createExpense = (entities) => (callback) => {
@@ -15,7 +18,7 @@ const createExpense = (entities) => (callback) => {
         category: categoryId
     };
     const body = JSON.stringify(content);
-    request.post(url + "create", { body: body }, callback);
+    request.post(url + "create", { headers: headers, body: body }, callback);
 };
 
 module.exports = {
